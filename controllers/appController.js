@@ -1,72 +1,62 @@
-import UserModel from "../Model/UserModel.js"
-import bcrypt from "bcrypt"
+// const UserModel = require("../Model/UserModel.js")
+// const bcrypt= require("bcrypt")
+// const ENV =require( "../config.js")
+// const jwt=require("jsonwebtoken")
 
 
-export async function register(req,res){
-    try {
-        const {firstname,lastname,password,email}=req.body
+
+
+// export async function login(req,res){
+//     const {email,password}=req.body
+//         const {jwt}=pkg
+//         console.log(jwt)
         
-        
-        
-        
+//         const user=  UserModel.findOne({email}).then(user=>{
+//             bcrypt.compare(password,user.password,(err,result)=>{      
+//             })
 
-        const hashedPassword= bcrypt.hash(password,10)
-        console.log(hashedPassword)
-        const user=new UserModel({firstname,lastname,password,email})
-        console.log(user)
-        user.save().then(()=>{
-            res.status(201).send({msg:"user successfully created"})
-        })
+//             const token=  jwt.sign({
+//                   userId: user._id,
+//                   firstname:user.firstname,
+//               },ENV.JWT_SECRET,{expiresIn:"24h"})
 
+//               return res.status(200).send({msg:"Login Successful",
+//                     firstname:user.firstname,
+//                   token})
+//                  })
+            
+           
+       
+// }
 
-        // Promise.all([existFirstname,existEmail]).then(()=>{
-        //     if(password){
-        //     const hashedPassword= bcrypt.hash(password,10)
-        //     console.log(hashedPassword)
-        //     }
+// // GET:http://localhost:8080/api/getUser
 
-        // }).catch(error=>{
-        //     return res.status(500).send(error)
-        // })
-        
-    } catch (error) {
-        return res.status(500).send(error)
-        
-    }
-}
+// export async function getUser(req,res){
+//     res.json("getUser route")
+// }
 
-export async function login(req,res){
-    res.json("login route")
-}
+// // PUT:http://localhost:8080/api/updateUser
 
-// GET:http://localhost:8080/api/getUser
+// export async function updateUser(req,res){
+//     res.json("register route")
+// }
 
-export async function getUser(req,res){
-    res.json("getUser route")
-}
+// // GET:http://localhost:8080/api/generateOTP
+// export async function generateOTP(req,res){
+//     res.json("generate  route")
+// }
+// // GET:http://localhost:8080/api/verifyOTP
+// export async function verifyOTP(req,res){
+//     res.json("register route")
+// }
 
-// PUT:http://localhost:8080/api/updateUser
+// // GET:http://localhost:8080/api/createResetSession
+// export async function createResetSession(req,res){
+//     res.json("create session  route")
+// }
 
-export async function updateUser(req,res){
-    res.json("register route")
-}
-
-// GET:http://localhost:8080/api/generateOTP
-export async function generateOTP(req,res){
-    res.json("generate  route")
-}
-// GET:http://localhost:8080/api/verifyOTP
-export async function verifyOTP(req,res){
-    res.json("register route")
-}
-
-// GET:http://localhost:8080/api/createResetSession
-export async function createResetSession(req,res){
-    res.json("create session  route")
-}
-
-// PUT:http://localhost:8080/api/resetPassword
-export async function resetPassword(req,res){
-    res.json("reset password route")
-}
+// // PUT:http://localhost:8080/api/resetPassword
+// export async function resetPassword(req,res){
+//     res.json("reset password route")
+// }
 
