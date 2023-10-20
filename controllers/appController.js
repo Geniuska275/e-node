@@ -11,21 +11,7 @@
 //         const {jwt}=pkg
 //         console.log(jwt)
         
-//         const user=  UserModel.findOne({email}).then(user=>{
-//             bcrypt.compare(password,user.password,(err,result)=>{      
-//             })
-
-//             const token=  jwt.sign({
-//                   userId: user._id,
-//                   firstname:user.firstname,
-//               },ENV.JWT_SECRET,{expiresIn:"24h"})
-
-//               return res.status(200).send({msg:"Login Successful",
-//                     firstname:user.firstname,
-//                   token})
-//                  })
-            
-           
+     
        
 // }
 

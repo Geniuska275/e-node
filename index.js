@@ -63,11 +63,12 @@ server.post("/register",(req,res)=>{
                 firstname,
                 lastname,
                 password:hashedPassword,
-                email})
-            
+                email})     
              user.save().then(()=>{
                  res.status(201).send({msg:"user successfully created"})
              })})
+
+             
         
 })
 
@@ -155,14 +156,11 @@ server.put("/resetPassword",verifyUser,(req,res)=>{
     try {
             if(!req.app.locals.resetSession) return res.status(440).send({msg:"session expired"})
             const {email,password}=req.body
-            const user= Users.findOne({email})
-    
+            const user= Users.findOne({email})    
              bcrypt.hash(password,10).then(hashedPassword=>{
                 Users.updateOne({email:user.email},{password:hashedPassword}).then(result=>{
                     return res.status(201).send({msg:"reset password successful"})
                 })
-           
-
         }).catch(error=>{
             return res.status(404).send({msg:"User not found"})
         })
