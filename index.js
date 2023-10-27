@@ -26,7 +26,6 @@ server.use(express.json())
 
 server.use(cors())
 server.use(morgan("tiny"))
-server.use("/api",router)
 server.get("/",(req,res)=>{ 
     res.send("backends")
 })
