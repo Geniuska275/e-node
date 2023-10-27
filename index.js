@@ -171,3 +171,5 @@ server.put("/resetPassword",verifyUser,(req,res)=>{
 server.listen(port,()=>{
     console.log(`server listening to ${port}`)
 })  
+
+module.exports=server
