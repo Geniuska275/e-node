@@ -1,4 +1,7 @@
-{"scripts":{
+{   "engines": {
+    "node":"18.x"
+},
+    "scripts":{
     "start":"nodemon index.js",
     "vercel-build":"echo hello"
 }
