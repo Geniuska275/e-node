@@ -13,7 +13,7 @@ const LocalVariables=require("./middleware/auth")
 const bodyParser=require( "body-parser");
 
 const server=express()
-const port=8080
+const port=8080 || 5000 
 
 // api route
 // middlewares
