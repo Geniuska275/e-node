@@ -1,5 +1,5 @@
 const mongoose=require("mongoose")
-const Users=require("../Model/UserModel")
+const Users=require("./Model/UserModel")
 const  express =require("express")
 const cors =require("cors")
 const morgan =require("morgan")
@@ -7,9 +7,9 @@ const bcrypt= require("bcrypt")
 // const ENV =require( "../config.js")
 const jwt=require("jsonwebtoken")
 const otpgenerator=require("otp-generator")
-const LocalVariables=require("../middleware/auth")
+const LocalVariables=require("./middleware/auth")
 
-const router= require("../router/router.js");
+const router= require("./router/router.js");
 const bodyParser=require( "body-parser");
 
 const server=express()
