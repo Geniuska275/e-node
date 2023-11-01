@@ -9,7 +9,7 @@ const jwt=require("jsonwebtoken")
 const otpgenerator=require("otp-generator")
 const LocalVariables=require("./middleware/auth")
 
-const router= require("./router/router.js");
+
 const bodyParser=require( "body-parser");
 
 const server=express()
