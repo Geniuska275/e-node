@@ -24,7 +24,9 @@ server.use(bodyParser.json())
 server.use(express.json())
 
 
-server.use(cors())
+server.use(cors({
+    origin:"https://localhost:5173"
+}))
 server.use(morgan("tiny"))
 server.get("/",(req,res)=>{ 
     res.send("backends")
