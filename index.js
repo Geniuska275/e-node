@@ -25,7 +25,10 @@ server.use(express.json())
 
 
 server.use(cors({
-    origin:"https://localhost:5173"
+    origin:"*"
+}))
+server.use(cors({
+    methods:["POST","GET","PUT","PATCH"]
 }))
 server.use(morgan("tiny"))
 server.get("/",(req,res)=>{ 
